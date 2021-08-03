@@ -8,7 +8,7 @@ plugins {
 group 'com.neweda.test'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
@@ -22,7 +22,11 @@ dependencies {
 
     implementation('com.h2database:h2')
 
-    implementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testCompile("info.cukes:cucumber-java:$cucumberVersion")
+    testCompile("info.cukes:cucumber-junit:$cucumberVersion")
+    testCompile("info.cukes:cucumber-spring:$cucumberVersion")
 
     testImplementation 'junit:junit'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
